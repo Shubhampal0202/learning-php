@@ -24,4 +24,10 @@ for ($x = 0; $x <= 10; $x++) {
     echo "<br/>";
     echo "The number is: $x <br>";
 }
-?>
+
+// foreach loops
+
+$arr = ["Aman", 4, "Ankit", "Rishav", true];
+foreach ($arr as $val) {
+    echo $val . "<br/>";
+}
