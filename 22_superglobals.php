@@ -9,9 +9,11 @@ echo "<br/>";
 function myFunc()
 {
     $GLOBALS["p"] = 100;
+    
 }
+
 myFunc();
-echo $GLOBALS["p"];
+echo $p;
 echo "<br/>";
 echo $p . "<br/>";
 
@@ -30,37 +32,19 @@ echo $_SERVER['HTTP_USER_AGENT'];
 echo "<br>";
 echo $_SERVER['SCRIPT_NAME'];
 
+echo "<hr/>";
+$x = 75;
+$y = 60;
+$z = "Shubham";
+
+function myfunc2()
+{
+    echo $GLOBALS["x"];
+    echo $GLOBALS["y"];
+    echo $GLOBALS["z"];
+}
+
+myfunc2()
+
 
 ?>
-
-
-
-<html>
-
-<body>
-
-    <form method="post"
-          action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        Name: <input type="text"
-               name="fname"
-               placeholder="Enter Text">
-        <input type="submit">
-    </form>
-
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = htmlspecialchars($_REQUEST['fname']);
-        $name = $_REQUEST['fname'];
-        if (empty($name)) {
-            echo "Name is empty";
-        } else {
-            echo $name;
-        }
-    }
-
-
-    ?>
-
-</body>
-
-</html>
